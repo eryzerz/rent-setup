@@ -1,10 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, ContactShadows } from '@react-three/drei';
 import { SceneContent } from './SceneContent';
+import { SummaryModal } from './SummaryModal';
+import { useConfiguratorStore } from '@/stores/useConfiguratorStore';
+import { Button } from '@/components/ui/button';
+import { ShoppingCart } from 'lucide-react';
 
 export default function ViewportCanvas() {
+  const [summaryOpen, setSummaryOpen] = useState(false);
+  const { getSelectedItems } = useConfiguratorStore();
+  const selectedCount = getSelectedItems().length;
+
   return (
     <div className="relative w-full h-full">
       <Canvas
@@ -36,6 +45,20 @@ export default function ViewportCanvas() {
       <div className="absolute bottom-4 left-4 text-xs text-gray-400">
         Drag to rotate &bull; Scroll to zoom
       </div>
+
+      {/* Rent button - bottom right */}
+      <div className="absolute bottom-4 right-4">
+        <Button
+          onClick={() => setSummaryOpen(true)}
+          disabled={selectedCount === 0}
+          className="gap-2"
+        >
+          <ShoppingCart className="w-4 h-4" />
+          Rent
+        </Button>
+      </div>
+
+      <SummaryModal open={summaryOpen} onOpenChange={setSummaryOpen} />
     </div>
   );
 }

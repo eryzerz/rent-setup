@@ -1,13 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import { X, Trash2, ShoppingCart } from 'lucide-react';
 import { useConfiguratorStore } from '@/stores/useConfiguratorStore';
 import { formatPrice } from '@/components/catalog/catalogData';
 import { Button } from '@/components/ui/button';
 import type { Category } from '@/types/catalog';
+import { SummaryModal } from './SummaryModal';
 
 export function SelectedItemsBar() {
   const { removeItem, clearAll, getTotalPrice, getSelectedItems } = useConfiguratorStore();
+  const [summaryOpen, setSummaryOpen] = useState(false);
 
   const totalPrice = getTotalPrice();
   const selectedItems = getSelectedItems();
@@ -22,8 +25,9 @@ export function SelectedItemsBar() {
   }
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-sm border-t border-border">
-      <div className="flex items-center gap-4 px-4 py-3">
+    <>
+      <div className="absolute bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-sm border-t border-border">
+        <div className="flex items-center gap-4 px-4 py-3">
         {/* Selected items scroll */}
         <div className="flex-1 flex items-center gap-3 overflow-x-auto scrollbar-hide">
           {selectedItems.map((item) => (
@@ -75,12 +79,19 @@ export function SelectedItemsBar() {
             <Trash2 className="w-4 h-4 mr-1" />
             Clear All
           </Button>
-          <Button size="sm">
+          <Button
+            size="sm"
+            onClick={() => setSummaryOpen(true)}
+            disabled={selectedCount === 0}
+          >
             <ShoppingCart className="w-4 h-4 mr-1" />
-            Add to Cart
+            Rent
           </Button>
         </div>
+        </div>
       </div>
-    </div>
+
+      <SummaryModal open={summaryOpen} onOpenChange={setSummaryOpen} />
+    </>
   );
 }
