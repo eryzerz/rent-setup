@@ -17,7 +17,7 @@ interface ConfiguratorState {
   getSelectedItems: () => CatalogItem[];
 }
 
-const MAX_MONITORS = 3;
+const MAX_MONITORS = 2;
 const MAX_DECORATIVES = 10;
 
 export const useConfiguratorStore = create<ConfiguratorState>((set, get) => ({

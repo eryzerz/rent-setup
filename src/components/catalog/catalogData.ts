@@ -90,17 +90,6 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     description: 'Simple plastic garden or cafe chair',
   },
   {
-    id: 'monitor',
-    name: 'Standard Monitor',
-    category: 'monitor',
-    price: 19900,
-    modelUrl: '/models/monitor.glb',
-    scale: 0.00028,
-    slotPosition: [-1574.86, -84.52, -101.57],
-    rotation: [0, -0.4, 0],
-    description: '24-inch standard monitor',
-  },
-  {
     id: 'curved_monitor',
     name: 'Curved Monitor',
     category: 'monitor',

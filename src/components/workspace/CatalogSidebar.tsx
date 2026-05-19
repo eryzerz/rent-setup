@@ -25,6 +25,11 @@ interface CatalogSidebarProps {
 }
 
 export function CatalogSidebar({ className = '' }: CatalogSidebarProps) {
+  const itemCounts = SLOTS.reduce((acc, slot) => {
+    acc[slot.category] = CATALOG_ITEMS.filter((item) => item.category === slot.category).length;
+    return acc;
+  }, {} as Record<Category, number>);
+
   return (
     <aside 
       className={`w-[300px] flex-shrink-0 bg-surface border-r border-border flex flex-col h-full overflow-hidden ${className}`}
@@ -60,7 +65,7 @@ export function CatalogSidebar({ className = '' }: CatalogSidebarProps) {
                       variant="secondary" 
                       className="text-[10px] h-5 px-1.5 font-medium bg-surface border border-border"
                     >
-                      {slot.maxItems}
+                      {itemCounts[slot.category]}
                     </Badge>
                   </span>
                 </AccordionTrigger>
