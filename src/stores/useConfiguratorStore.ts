@@ -30,10 +30,14 @@ export const useConfiguratorStore = create<ConfiguratorState>((set, get) => ({
   selectItem: (item: CatalogItem) => {
     switch (item.category) {
       case 'table':
-        set({ table: item });
+        set((state) => ({
+          table: state.table?.id === item.id ? null : item,
+        }));
         break;
       case 'chair':
-        set({ chair: item });
+        set((state) => ({
+          chair: state.chair?.id === item.id ? null : item,
+        }));
         break;
       case 'monitor':
         set((state) => {
@@ -64,7 +68,9 @@ export const useConfiguratorStore = create<ConfiguratorState>((set, get) => ({
         });
         break;
       case 'shelf':
-        set({ shelf: item });
+        set((state) => ({
+          shelf: state.shelf?.id === item.id ? null : item,
+        }));
         break;
     }
   },
