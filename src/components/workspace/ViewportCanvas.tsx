@@ -6,8 +6,6 @@ import { OrbitControls, useGLTF, ContactShadows, Environment } from '@react-thre
 import { SummaryModal } from './SummaryModal';
 import { useConfiguratorStore } from '@/stores/useConfiguratorStore';
 import { useModelConfig, mergeWithConfig } from '@/contexts/ModelConfigContext';
-import { Button } from '@/components/ui/button';
-import { ShoppingCart } from 'lucide-react';
 import * as THREE from 'three';
 
 interface ModelProps {
@@ -164,22 +162,11 @@ export default function ViewportCanvas() {
         <SceneContent />
       </Canvas>
 
-      <div className="absolute bottom-16 left-4 text-xs text-gray-400">
+      <div className="absolute bottom-4 left-4 text-xs text-gray-400">
         Drag to rotate &bull; Scroll to zoom
       </div>
 
-      <div className="absolute bottom-4 right-4">
-        <Button
-          onClick={() => setSummaryOpen(true)}
-          disabled={selectedCount === 0}
-          className="gap-2"
-        >
-          <ShoppingCart className="w-4 h-4" />
-          Rent{selectedCount > 0 && ` (${selectedCount})`}
-        </Button>
-      </div>
-
-      <SummaryModal open={summaryOpen} onOpenChange={setSummaryOpen} />
+      <SummaryModal open={summaryOpen} onOpenChange={setSummaryOpen} selectedCount={selectedCount} />
     </div>
   );
 }

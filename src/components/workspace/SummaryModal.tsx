@@ -16,6 +16,7 @@ import { Check, ShoppingCart, Package, Monitor, Armchair, Box, ArrowRight } from
 interface SummaryModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  selectedCount: number;
 }
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -26,7 +27,7 @@ const categoryIcons: Record<string, React.ComponentType<{ className?: string }>>
   shelf: Box,
 };
 
-export function SummaryModal({ open, onOpenChange }: SummaryModalProps) {
+export function SummaryModal({ open, onOpenChange, selectedCount }: SummaryModalProps) {
   const { getTotalPrice, getSelectedItems } = useConfiguratorStore();
   const [isConfirmed, setIsConfirmed] = useState(false);
 
@@ -126,14 +127,14 @@ export function SummaryModal({ open, onOpenChange }: SummaryModalProps) {
               </div>
               <div className="flex gap-2">
                 <Button variant="outline" onClick={handleClose} className="flex-1">
-                  Cancel
+                  Close
                 </Button>
                 <Button
                   onClick={handleConfirm}
                   disabled={!hasItems}
                   className="flex-1 gap-2"
                 >
-                  Confirm
+                  Rent {hasItems && `(${selectedCount})`}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
