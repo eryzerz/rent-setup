@@ -6,6 +6,8 @@ import { OrbitControls, useGLTF, ContactShadows, Environment } from '@react-thre
 import { SummaryModal } from './SummaryModal';
 import { useConfiguratorStore } from '@/stores/useConfiguratorStore';
 import { useModelConfig, mergeWithConfig } from '@/contexts/ModelConfigContext';
+import { Button } from '@/components/ui/button';
+import { ShoppingCart } from 'lucide-react';
 import * as THREE from 'three';
 
 interface ModelProps {
@@ -133,7 +135,7 @@ export default function ViewportCanvas() {
   const selectedCount = useConfiguratorStore((s) => s.getSelectedItems().length);
 
   return (
-    <div className="relative w-full h-full" style={{ height: 'calc(100vh - 80px)' }}>
+    <div className="relative w-full h-full">
       <Canvas
         camera={{ position: [4, 3, 4], fov: 50 }}
         style={{ background: '#1a1a2e', width: '100%', height: '100%' }}
@@ -164,6 +166,17 @@ export default function ViewportCanvas() {
 
       <div className="absolute bottom-4 left-4 text-xs text-gray-400">
         Drag to rotate &bull; Scroll to zoom
+      </div>
+
+      <div className="absolute bottom-4 right-4">
+        <Button
+          onClick={() => setSummaryOpen(true)}
+          disabled={selectedCount === 0}
+          className="bg-white text-fg hover:bg-gray-100 border border-border shadow-md gap-2"
+        >
+          <ShoppingCart className="w-4 h-4" />
+          Rent{selectedCount > 0 && ` (${selectedCount})`}
+        </Button>
       </div>
 
       <SummaryModal open={summaryOpen} onOpenChange={setSummaryOpen} selectedCount={selectedCount} />

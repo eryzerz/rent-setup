@@ -1,7 +1,6 @@
 'use client';
 
 import { CatalogSidebar } from './CatalogSidebar';
-import { SelectedItemsBar } from './SelectedItemsBar';
 import ViewportCanvas from './ViewportCanvas';
 
 export default function WorkspaceConfigurator() {
@@ -10,7 +9,6 @@ export default function WorkspaceConfigurator() {
       <CatalogSidebar />
       <div className="flex-1 relative">
         <ViewportCanvas />
-        <SelectedItemsBar />
       </div>
     </div>
   );
