@@ -46,17 +46,6 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     description: 'Standard computer desk with cable management',
   },
   {
-    id: 'modern_computer_desk',
-    name: 'Modern Computer Desk',
-    category: 'table',
-    price: 44900,
-    modelUrl: '/models/modern_computer_desk.glb',
-    scale: 0.0118,
-    slotPosition: [-187.81, 36.75, -1066.9],
-    rotation: [0, 1.57, 0],
-    description: 'Contemporary desk with clean lines',
-  },
-  {
     id: 'wood_desk',
     name: 'Wooden Desk',
     category: 'table',

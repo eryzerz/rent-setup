@@ -169,14 +169,17 @@ export default function ViewportCanvas() {
       </div>
 
       <div className="absolute bottom-4 right-4">
-        <Button
-          onClick={() => setSummaryOpen(true)}
-          disabled={selectedCount === 0 ? true : undefined}
-          className="gap-2"
-        >
-          <ShoppingCart className="w-4 h-4" />
-          Rent
-        </Button>
+        {selectedCount === 0 ? (
+          <Button disabled className="gap-2">
+            <ShoppingCart className="w-4 h-4" />
+            Rent
+          </Button>
+        ) : (
+          <Button onClick={() => setSummaryOpen(true)} className="gap-2">
+            <ShoppingCart className="w-4 h-4" />
+            Rent
+          </Button>
+        )}
       </div>
 
       <SummaryModal open={summaryOpen} onOpenChange={setSummaryOpen} />

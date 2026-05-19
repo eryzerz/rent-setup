@@ -1,20 +1,94 @@
 {
   "items": [
-    { "id": "computer_desk", "scale": 0.8, "slotPosition": [0, 0.4, 0], "rotation": [0, 0, 0] },
-    { "id": "modern_computer_desk", "scale": 0.0118, "slotPosition": [-187.81, 36.75, -1066.9], "rotation": [0, 1.57, 0] },
-    { "id": "wood_desk", "scale": 0.7, "slotPosition": [0, 0.44, 0], "rotation": [0, 0, 0] },
-    { "id": "gaming_chair", "scale": 0.03, "slotPosition": [-0.47, -0.78, -0.02], "rotation": [0, -2.74, 0] },
-    { "id": "office_chair", "scale": 0.815, "slotPosition": [0.13, 0.6, 0.64], "rotation": [0, -2.58, 0] },
-    { "id": "plastic_chair", "scale": 0.74, "slotPosition": [-0.03, 0.56, 0.62], "rotation": [0, 3.11, 0] },
-    { "id": "monitor", "scale": 0.00028, "slotPosition": [-1574.86, -84.52, -101.57], "rotation": [0, -0.4, 0] },
-    { "id": "curved_monitor", "scale": 0.00028, "slotPosition": [-1574.86, -84.52, -101.57], "rotation": [0, -0.4, 0] },
-    { "id": "ultrawide_monitor", "scale": 0.00028, "slotPosition": [-1574.86, -84.52, -101.57], "rotation": [0, -0.4, 0] },
-    { "id": "desk_lamp", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] },
-    { "id": "sci-fi_desk_lamp", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] },
-    { "id": "fake_plant", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] },
-    { "id": "pencil_holder", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] },
-    { "id": "modern_bookshelf", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] },
-    { "id": "wooden_bookshelf", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] },
-    { "id": "mounted_bookshelf", "scale": 0.12, "slotPosition": [-0.8, 1.91, -0.2], "rotation": [0, 0, 0] }
+    {
+      "id": "computer_desk",
+      "scale": 0.8,
+      "slotPosition": [0, 0.4, 0],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "wood_desk",
+      "scale": 0.7,
+      "slotPosition": [0, 0.44, 0],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "gaming_chair",
+      "scale": 0.03,
+      "slotPosition": [-0.47, -0.78, -0.02],
+      "rotation": [0, -2.74, 0]
+    },
+    {
+      "id": "office_chair",
+      "scale": 0.815,
+      "slotPosition": [0.13, 0.6, 0.64],
+      "rotation": [0, -2.58, 0]
+    },
+    {
+      "id": "plastic_chair",
+      "scale": 0.74,
+      "slotPosition": [-0.03, 0.56, 0.62],
+      "rotation": [0, 3.11, 0]
+    },
+    {
+      "id": "monitor",
+      "scale": 0.00028,
+      "slotPosition": [-1574.76, -84.52, -101.5],
+      "rotation": [0, -0.5, 0]
+    },
+    {
+      "id": "curved_monitor",
+      "scale": 4.3,
+      "slotPosition": [-0.02, 0.67, -0.16],
+      "rotation": [0, -1.6, 0]
+    },
+    {
+      "id": "ultrawide_monitor",
+      "scale": 0.07,
+      "slotPosition": [-0.05, 0.19, -1.37],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "desk_lamp",
+      "scale": 0.12,
+      "slotPosition": [-0.62, 1.91, 0.23],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "sci-fi_desk_lamp",
+      "scale": 0.5,
+      "slotPosition": [-1.5, 0.9, 0.07],
+      "rotation": [0, -3.1, 0]
+    },
+    {
+      "id": "fake_plant",
+      "scale": 0.01,
+      "slotPosition": [-2.25, 17.9, -1.73],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "pencil_holder",
+      "scale": 0.8,
+      "slotPosition": [-0.33, 0.67, -0.33],
+      "rotation": [0, -1.5, 0]
+    },
+    {
+      "id": "modern_bookshelf",
+      "scale": 0.5,
+      "slotPosition": [0.04, 1.47, -0.56],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "wooden_bookshelf",
+      "scale": 0.005,
+      "slotPosition": [0.92, 62.02, -1.11],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "id": "mounted_bookshelf",
+      "scale": 0.5,
+      "slotPosition": [0, 1.39, -0.4],
+      "rotation": [0, 0, 0]
+    }
   ]
 }
